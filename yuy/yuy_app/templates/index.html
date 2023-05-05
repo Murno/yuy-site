@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>yuy</title>
-  <link rel="stylesheet" href="static/style/main.css">
-  <script src="static/libs/gsap/gsap.min.js" defer></script>
-  <script src="static/libs/gsap/ScrollTrigger.min.js" defer></script>
-  <script src="static/libs/gsap/ScrollSmoother.min.js" defer></script>
-  <script src="static/script/app.js" defer></script>
-</head>
+{% extends 'header.html' %}
+{% block header %}
+
 <body>
   <div class="wrapper">
     <div class="container">
@@ -32,12 +22,12 @@
           <h2 class="main-article__header">YUY SQUADRON</h2>
           <p class="main-article__paragraph">
             <ul class="main-article__list">
-              <li class="main-article__member"></li>
-              <li class="main-article__member"></li>
-              <li class="main-article__member"></li>
-              <li class="main-article__member"></li>
-              <li class="main-article__member"></li>
-              <li class="main-article__member"></li>
+
+              {% for member in list_members %}
+
+              <li class="main-article__member"><a href="/member/{{member.id}}">{{member.name}}</a></li>
+
+              {% endfor %}
             </ul>
           </p>
         </div>
@@ -47,4 +37,4 @@
     </div>
   </div>
 </body>
-</html>
+{% endblock %}
