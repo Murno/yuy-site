@@ -9,8 +9,6 @@ def index(request):
 
     list_members = Member.objects.all()
 
-    print(list_members)
-
     context = {
         'list_members' : list_members
     }
